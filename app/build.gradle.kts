@@ -33,6 +33,10 @@ dependencies {
     implementation(Libraries.ktx)
     implementation(Libraries.constraintLayout)
 
+    implementation(Libraries.retrofit)
+    implementation(Libraries.converter_moshi)
+    implementation(Libraries.moshi)
+
     testImplementation(TestLibraries.junit)
     androidTestImplementation(TestLibraries.junitExt)
     androidTestImplementation(TestLibraries.espresso)

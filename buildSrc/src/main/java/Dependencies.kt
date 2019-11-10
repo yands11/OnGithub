@@ -4,6 +4,10 @@ object Libraries {
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val converter_moshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
+    const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
 }
 
 object TestLibraries {
@@ -25,6 +29,9 @@ object Versions {
     const val appCompat = "1.1.0"
     const val constraintLayout = "1.1.3"
 
+    const val retrofit = "2.6.2"
+    const val moshi = "1.9.1"
+
     const val junit = "4.12"
     const val junitExt = "1.1.1"
     const val espresso = "3.2.0"
@@ -34,6 +41,7 @@ object Releases {
     const val versionCode = 1
     const val versionName = "1.0"
 }
+
 object Application {
     const val id = "com.blank.ongithub"
 }
