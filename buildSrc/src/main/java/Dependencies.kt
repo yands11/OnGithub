@@ -9,7 +9,8 @@ object Releases {
 
 
 object Libraries {
-    const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
+    const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin}"
+    const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}"
     const val ktx = "androidx.core:core-ktx:${Versions.ktx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val constraintLayout =
@@ -38,6 +39,7 @@ object Versions {
     const val gradle = "3.5.2"
 
     const val kotlin = "1.3.50"
+    const val coroutine = "1.3.2"
     const val ktx = "1.1.0"
     const val appCompat = "1.1.0"
     const val constraintLayout = "1.1.3"

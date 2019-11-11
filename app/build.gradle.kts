@@ -30,6 +30,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
 
     implementation(Libraries.appCompat)
+    implementation(Libraries.coroutine)
     implementation(Libraries.ktx)
     implementation(Libraries.constraintLayout)
 
