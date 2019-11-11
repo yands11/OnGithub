@@ -37,6 +37,9 @@ dependencies {
     implementation(Libraries.converter_moshi)
     implementation(Libraries.moshi)
 
+    implementation(Libraries.koin)
+    implementation(Libraries.koin_viewmodel)
+
     testImplementation(TestLibraries.junit)
     androidTestImplementation(TestLibraries.junitExt)
     androidTestImplementation(TestLibraries.espresso)

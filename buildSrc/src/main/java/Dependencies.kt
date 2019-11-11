@@ -1,3 +1,13 @@
+object Application {
+    const val id = "com.blank.ongithub"
+}
+
+object Releases {
+    const val versionCode = 1
+    const val versionName = "1.0"
+}
+
+
 object Libraries {
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val ktx = "androidx.core:core-ktx:${Versions.ktx}"
@@ -8,6 +18,9 @@ object Libraries {
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val converter_moshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
     const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
+
+    const val koin = "org.koin:koin-androidx-scope:${Versions.koin}"
+    const val koin_viewmodel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
 }
 
 object TestLibraries {
@@ -32,16 +45,9 @@ object Versions {
     const val retrofit = "2.6.2"
     const val moshi = "1.9.1"
 
+    const val koin = "2.0.1"
+
     const val junit = "4.12"
     const val junitExt = "1.1.1"
     const val espresso = "3.2.0"
-}
-
-object Releases {
-    const val versionCode = 1
-    const val versionName = "1.0"
-}
-
-object Application {
-    const val id = "com.blank.ongithub"
 }
