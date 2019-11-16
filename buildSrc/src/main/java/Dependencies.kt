@@ -26,12 +26,16 @@ object Libraries {
     const val fragment_ktx =
         "androidx.fragment:fragment-ktx:${Versions.fragment}"
 
+    const val gson = "com.google.code.gson:gson:${Versions.gson}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
-    const val converter_moshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
-    const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
+    const val converter_gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
 
     const val koin = "org.koin:koin-androidx-scope:${Versions.koin}"
     const val koin_viewmodel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
+
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+
+    const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 }
 
 object TestLibraries {
@@ -57,9 +61,13 @@ object Versions {
     const val fragment = "1.1.0"
 
     const val retrofit = "2.6.2"
-    const val moshi = "1.9.1"
+    const val gson = "2.8.6"
 
     const val koin = "2.0.1"
+
+    const val glide = "4.10.0"
+
+    const val timber = "4.7.1"
 
     const val junit = "4.12"
     const val junitExt = "1.1.1"

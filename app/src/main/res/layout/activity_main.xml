@@ -1,18 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <variable
+            name="vm"
+            type="com.blank.ongithub.main.viewmodel.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".main.MainActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_following"
+            app:layout_constraintEnd_toEndOf="@+id/guide_end"
+            app:layout_constraintTop_toTopOf="@id/guide_top"
+            app:url="@{vm.bundle.photoUrl}"
+            tools:src="@android:drawable/ic_lock_idle_low_battery" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="start"
+            app:constraint_referenced_ids="iv_profile" />
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.bundle.githubId}"
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/guide_start"
+            app:layout_constraintTop_toTopOf="@+id/guide_top"
+            tools:text="yands" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{vm.bundle.name}"
+            android:textColor="#AAAAAA"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_id"
+            app:layout_constraintEnd_toStartOf="@+id/barrier"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/tv_id"
+            tools:text="dot2line" />
+
+        <TextView
+            android:id="@+id/tv_bio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="start"
+            android:text="@{vm.bundle.bio}"
+            android:textColor="#333333"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/barrier"
+            app:layout_constraintStart_toStartOf="@+id/guide_start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="hello" />
+
+        <TextView
+            android:id="@+id/label_follower"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Followers"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/label_following"
+            app:layout_constraintStart_toStartOf="@+id/guide_start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bio" />
+
+        <TextView
+            android:id="@+id/tv_follower"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="@{vm.bundle.followers}"
+            android:textColor="#333333"
+            app:layout_constraintEnd_toEndOf="@+id/label_follower"
+            app:layout_constraintStart_toStartOf="@+id/label_follower"
+            app:layout_constraintTop_toBottomOf="@+id/label_follower"
+            tools:text="1" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="#AAAAAA"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_follower"
+            app:layout_constraintEnd_toEndOf="@+id/label_following"
+            app:layout_constraintStart_toStartOf="@+id/guide_start"
+            app:layout_constraintTop_toTopOf="@+id/label_follower" />
+
+        <TextView
+            android:id="@+id/label_following"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="Following"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/iv_profile"
+            app:layout_constraintStart_toEndOf="@+id/label_follower"
+            app:layout_constraintTop_toTopOf="@+id/label_follower" />
+
+        <TextView
+            android:id="@+id/tv_following"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="@{vm.bundle.following}"
+            android:textColor="#333333"
+            app:layout_constraintEnd_toEndOf="@+id/label_following"
+            app:layout_constraintStart_toStartOf="@+id/label_following"
+            app:layout_constraintTop_toBottomOf="@+id/label_following"
+            tools:text="1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

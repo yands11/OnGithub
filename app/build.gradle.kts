@@ -1,9 +1,8 @@
-import org.jetbrains.kotlin.config.KotlinCompilerVersion
-
 plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
+    kotlin("kapt")
 }
 
 android {
@@ -23,26 +22,44 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
+    dataBinding.isEnabled = true
+}
+
+kapt {
+    correctErrorTypes = true
+    useBuildCache = true
+    javacOptions {
+        // Increase the max count of errors from annotation processors.
+        // Default is 100.
+        option("-Xmaxerrs", 500)
+    }
 }
 
 dependencies {
+    api(project(mapOf("path" to ":entity")))
+
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
 
     implementation(Libraries.appCompat)
     implementation(Libraries.coroutine)
     implementation(Libraries.ktx)
+    implementation(Libraries.fragment)
+    implementation(Libraries.fragment_ktx)
+
     implementation(Libraries.constraintLayout)
     implementation(Libraries.lifecycle)
     implementation(Libraries.lifecycle_viewmodel_ktx)
     implementation(Libraries.lifecycle_runtime_ktx)
 
     implementation(Libraries.retrofit)
-    implementation(Libraries.converter_moshi)
-    implementation(Libraries.moshi)
+    implementation(Libraries.converter_gson)
 
     implementation(Libraries.koin)
     implementation(Libraries.koin_viewmodel)
+
+    implementation(Libraries.glide)
+
+    implementation(Libraries.timber)
 
     testImplementation(TestLibraries.junit)
     androidTestImplementation(TestLibraries.junitExt)
