@@ -33,6 +33,9 @@ dependencies {
     implementation(Libraries.coroutine)
     implementation(Libraries.ktx)
     implementation(Libraries.constraintLayout)
+    implementation(Libraries.lifecycle)
+    implementation(Libraries.lifecycle_viewmodel_ktx)
+    implementation(Libraries.lifecycle_runtime_ktx)
 
     implementation(Libraries.retrofit)
     implementation(Libraries.converter_moshi)

@@ -15,6 +15,16 @@ object Libraries {
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val lifecycle =
+        "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
+    const val lifecycle_viewmodel_ktx =
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    const val lifecycle_runtime_ktx =
+        "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
+    const val fragment =
+        "androidx.fragment:fragment:${Versions.fragment}"
+    const val fragment_ktx =
+        "androidx.fragment:fragment-ktx:${Versions.fragment}"
 
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val converter_moshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
@@ -43,6 +53,8 @@ object Versions {
     const val ktx = "1.1.0"
     const val appCompat = "1.1.0"
     const val constraintLayout = "1.1.3"
+    const val lifecycle = "2.2.0-rc02"
+    const val fragment = "1.1.0"
 
     const val retrofit = "2.6.2"
     const val moshi = "1.9.1"
